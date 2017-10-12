@@ -17,3 +17,5 @@ We will install and configure the Puppet server, PuppetDB database, a Puppet age
 - DNS
 - Puppet
 - Git
+
+[Test](kickstart.md)
