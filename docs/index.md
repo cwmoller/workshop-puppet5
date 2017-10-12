@@ -12,10 +12,14 @@ We will install and configure the Puppet server, PuppetDB database, a Puppet age
 
 ### Technologies covered
 
-- Kickstart
-- DHCP
-- DNS
-- Puppet
-- Git
+- [Kickstart](kickstart.md)
+- [DHCP](dhcp.md)
+- [DNS](dns.md)
+- [Puppet](puppet.md)
+- [Git](git.md)
 
-[Test](kickstart.md)
+### Hands on
+
+Feel free to go on ahead if you're well versed in any of the topics.
+
+We'll be installing a small [CentOS 7.4](http://centos.mirror.ac.za/7.4.1708/) VM to host our Puppet installation. Copies of the VMDK/VHDX files will be made available. If you wish to follow along, please make sure you have a working installation of Hyper-V, VMware (Workstation or Player) or VirtualBox.
