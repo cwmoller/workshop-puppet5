@@ -18,7 +18,7 @@ We will install and configure the Puppet server, PuppetDB database, a Puppet age
 - Puppet
 - Git
 
-
+[Test](tmp.md)
 
 You can use the [editor on GitHub](https://github.com/cwmoller/workshop-puppet5/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
