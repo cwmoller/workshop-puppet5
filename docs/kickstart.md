@@ -17,7 +17,7 @@ cdrom
 cmdline
 firewall --enabled --service=ssh
 firstboot --disable
-keyboard --vckeymap=us --xlayouts='us'
+keyboard --vckeymap=us --xlayouts="us"
 lang en_ZA.UTF-8
 network --bootproto=dhcp --ipv6=auto --activate
 reboot
@@ -48,7 +48,7 @@ logvol /tmp     --fstype="xfs"  --size=5120 --name=tmp  --vgname=vg0
 logvol swap     --fstype="swap" --size=200  --name=swap --vgname=vg0
 ```
 
-Next we specify while package groups and individual packages to install. Here we install the `core` group and a handful of other packages. Valid group names are in a file in the `repodata` directory on the install DVD.
+Next we specify which package groups and individual packages to install. Here we install the `core` group and a handful of other packages. Valid group names are in a file in the `repodata` directory on the install DVD.
 
 ```
 %packages --nobase
@@ -59,22 +59,19 @@ policycoreutils-python
 redhat-lsb-core
 screen
 vim
-
 %end
 ```
 
-Next we have code that runs just after installation in the new system. In this example we set up authorized SSH keys for the `root` user.
+Next we have normal shell commands that run just after installation in the new system. In this example we set up authorized SSH keys for the `root` user.
 
 ```
 %post
-
 /bin/mkdir -p /root/.ssh
 /bin/cat >/root/.ssh/authorized_keys << EOF
 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlz<snip>
 EOF
 /bin/chmod -R u=rwX,g-rwx,o-rwx /root/.ssh
 /sbin/restorecon -R /root/.ssh
-
 %end
 ```
 
