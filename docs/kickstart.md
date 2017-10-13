@@ -8,7 +8,7 @@ Kickstart files are supplied to the installer on boot as a kernel parameter. At 
 
 `vmlinuz initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 quiet inst.ks=https://github.com/cwmoller/workshop-puppet5/raw/master/ks.cfg`
 
-The kickstart file we're using contains the following.
+The kickstart file we're using contains the following. The first group of settings specify basics like keyboard layout, language and installation source.
 
 ```
 auth --enableshadow --passalgo=sha512
@@ -21,12 +21,15 @@ keyboard --vckeymap=us --xlayouts='us'
 lang en_ZA.UTF-8
 network --bootproto=dhcp --ipv6=auto --activate
 reboot
-
-rootpw --iscrypted $6$12fe36ec$aTtPc0Hb4rjmITbCiOAwERoSLCSs9LaYZEqvO3tmWioHCS3R1fUEhh6Vr0JhzO8MyS6/jF/FDRBgA9qc4QH/v/
+rootpw --iscrypted $6$12fe36ec$aTtPc0Hb4r<snip>
 selinux --enforcing
 timezone Africa/Johannesburg --isUtc
+```
 
-bootloader --location=mbr --iscrypted --password=grub.pbkdf2.sha512.10000.3CD58888167128B41EBD5A2DF6B3EF49B708BCCCE28614889B93F146D4F1AD4AA7EC35376023AD8A654AD8A04F15D10CEDF8D765038F2721DF6C78E6F66EEADC.00E5876D6E704EC0D4A9502C76789523084281D38C3AF059B0F270DE9493017B6EDD2E145A1A22387B4CFC8889FD997F2909B1D92D454DD7C748D8AE1C629330
+Next we have the disk configuration. This example nukes everything on the disks and prepares for both BIOS and UEFI boot. We also set a GRUB2 password.
+
+```
+bootloader --location=mbr --iscrypted --password=grub.pbkdf2.sha512.10000.<snip>
 zerombr
 clearpart --all --initlabel
 
@@ -43,18 +46,11 @@ logvol /var     --fstype="xfs"  --size=5120 --name=var  --vgname=vg0
 logvol /var/log --fstype="xfs"  --size=5120 --name=log  --vgname=vg0
 logvol /tmp     --fstype="xfs"  --size=5120 --name=tmp  --vgname=vg0
 logvol swap     --fstype="swap" --size=200  --name=swap --vgname=vg0
+```
 
-%post
+Next we specify while package groups and individual packages to install. Here we install the `core` group and a handful of other packages. Valid group names are in a file in the `repodata` directory on the install DVD.
 
-/bin/mkdir -p /root/.ssh
-/bin/cat >/root/.ssh/authorized_keys << EOF
-ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAGha6yLH47pcULE0GIeTLvUOcSfBPwQjTQYlRxOTViryhhYqI8FSd0iGVFmUeryq/xQ/kaBb0Hr74rXP9oVWqg=
-EOF
-/bin/chmod -R u=rwX,g-rwx,o-rwx /root/.ssh
-/sbin/restorecon -R /root/.ssh
-
-%end
-
+```
 %packages --nobase
 @core
 mc
@@ -65,7 +61,26 @@ screen
 vim
 
 %end
+```
 
+Next we have code that runs just after installation in the new system. In this example we set up authorized SSH keys for the `root` user.
+
+```
+%post
+
+/bin/mkdir -p /root/.ssh
+/bin/cat >/root/.ssh/authorized_keys << EOF
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlz<snip>
+EOF
+/bin/chmod -R u=rwX,g-rwx,o-rwx /root/.ssh
+/sbin/restorecon -R /root/.ssh
+
+%end
+```
+
+Completely optional, we disable the kdump feature.
+
+```
 %addon com_redhat_kdump --disable
 
 %end
