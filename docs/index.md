@@ -25,6 +25,7 @@ We'll be installing a small [CentOS 7.4](http://centos.mirror.ac.za/7.4.1708/) V
 ### Let's go!!
 
 1. [Install a new CentOS 7.4 VM](install-vm.md)
+1. [Configure the VM](configure-vm.md)
 1. Install Puppet Server 5
 1. Install PostgreSQL 9.6
 1. Install PuppetDB

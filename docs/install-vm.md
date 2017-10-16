@@ -30,3 +30,5 @@
    ![](images/install-vm-5.png)
    - username: `root`
    - password: `password`
+
+### [Next](configure-vm.md)
