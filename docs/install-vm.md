@@ -21,3 +21,8 @@
    - (with network, installing from DVD) add `inst.ks=https://github.com/cwmoller/workshop-puppet5/raw/master/ks.cfg`
    - (with network, installing from internet) add `inst.ks=https://github.com/cwmoller/workshop-puppet5/raw/master/ks-net.cfg`
    - (with no network, floppy disk image added) add `inst.ks=hd:/dev/fd0:/ks.cfg` ![](images/install-vm-3.png)
+1. Wait for the installation to complete (shouldn't be more than 10 minutes) ![](images/install-vm-4.png)
+   While we're waiting, let's review what we told [kickstart](kickstart.md) to do.
+1. Log in to your new VM
+   - username: `root`
+   - password: `password`
