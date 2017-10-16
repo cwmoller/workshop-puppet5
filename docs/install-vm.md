@@ -19,10 +19,10 @@
 1. Boot the VM from the ISO, select `Install CentOS 7` and press `TAB`.
    ![](images/install-vm-2.png)
 1. At the kernel parameters prompt, we'll add the `inst.ks` parameter, telling the installer to fetch and use a [Kickstart](kickstart.md) file.
+   ![](images/install-vm-3.png)
    - (with network, installing from DVD) add `inst.ks=https://github.com/cwmoller/workshop-puppet5/raw/master/ks.cfg`
    - (with network, installing from internet) add `inst.ks=https://github.com/cwmoller/workshop-puppet5/raw/master/ks-net.cfg`
    - (with no network, floppy disk image added) add `inst.ks=hd:/dev/fd0:/ks.cfg`
-   ![](images/install-vm-3.png)
 1. Wait for the installation to complete (shouldn't be more than 10 minutes)
    ![](images/install-vm-4.png)
 
