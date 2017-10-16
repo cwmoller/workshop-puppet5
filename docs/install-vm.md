@@ -17,15 +17,16 @@
 
 1. Create a VM with your favourite hypervisor. If your machine can afford it, give the VM 4GB RAM. For this workshop the number of cores is not important, you'll want 4 cores in production though. Even in production you won't need more than 32GB disk.
 1. Boot the VM from the ISO, select `Install CentOS 7` and press `TAB`.
-![](images/install-vm-2.png)
+   ![](images/install-vm-2.png)
 1. At the kernel parameters prompt, we'll add the `inst.ks` parameter, telling the installer to fetch and use a [Kickstart](kickstart.md) file.
    - (with network, installing from DVD) add `inst.ks=https://github.com/cwmoller/workshop-puppet5/raw/master/ks.cfg`
    - (with network, installing from internet) add `inst.ks=https://github.com/cwmoller/workshop-puppet5/raw/master/ks-net.cfg`
    - (with no network, floppy disk image added) add `inst.ks=hd:/dev/fd0:/ks.cfg`
-![](images/install-vm-3.png)
+   ![](images/install-vm-3.png)
 1. Wait for the installation to complete (shouldn't be more than 10 minutes)
-![](images/install-vm-4.png)
-While we're waiting, let's review what we told [kickstart](kickstart.md) to do.
+   ![](images/install-vm-4.png)
+
+   While we're waiting, let's review what we told [kickstart](kickstart.md) to do.
 1. Log in to your new VM
    - username: `root`
    - password: `password`
