@@ -26,7 +26,7 @@
 1. Wait for the installation to complete (shouldn't be more than 10 minutes)
    ![](images/install-vm-4.png)  
    While we're waiting, let's review what we told [kickstart](kickstart.md) to do.
-1. Log in to your new VM
+1. Log in to your new VM  
    ![](images/install-vm-5.png)
    - username: `root`
    - password: `password`
