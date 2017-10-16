@@ -1,4 +1,4 @@
-### Kickstart
+# Kickstart
 
 From the official documentation
 
