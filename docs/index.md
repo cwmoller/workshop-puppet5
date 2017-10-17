@@ -26,8 +26,8 @@ We'll be installing a small [CentOS 7.4](http://centos.mirror.ac.za/7.4.1708/) V
 
 1. [Install a new CentOS 7.4 VM](install-vm.md)
 1. [Configure the VM](configure-vm.md)
-1. Install Puppet Server 5
-1. Install PostgreSQL 9.6
-1. Install PuppetDB
-1. Register a Puppet Agent
+1. [Install Puppet Server 5](install-puppet-server.md)
+1. [Install PostgreSQL 9.5](install-postgresql.md)
+1. [Install Puppet DB](install-puppet-db.md)
+1. [Register a Puppet Agent](install-puppet-agent.md)
 1. Create and apply a configuration to the Agent
