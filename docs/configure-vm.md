@@ -20,10 +20,10 @@
       `sed -ri 's/^#?(PermitRootLogin).*/\1 no/g' /etc/ssh/sshd_config`  
       `systemctl restart sshd`
    1. Log in with your new user.
-1. Static hostname
+1. Static hostname  
    Puppet generates SSL certificates based on the machine's hostname. If the hostname changes due to the network being down or misconfigured, we don't want Puppet to get confused. The hostname doesn't need to conform to puppet.domain, but it helps a bit.  
    `sudo hostnamectl set-hostname workshop.vm`
-1. Active network connection
+1. Active network connection  
    The first network interface should have been automatically connected and set up to use DHCP. If not, make sure you have network connectivity and can access the internet.  
    Let's assume we're connected to a network with available addresses in the 172.30.30.0/24 network and route via 172.30.30.1 which is also acting as a DNS resolver. Edit `/etc/sysconfig/network-scripts/ifcfg-eth0` and add the following:  
    ```
