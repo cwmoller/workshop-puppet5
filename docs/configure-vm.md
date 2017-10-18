@@ -17,7 +17,7 @@
       `passwd sysadm`
    1. Delete the password for the `root` user from `/etc/shadow`  
       `passwd -d root`
-   1. Set SSH to either disallow root logins (`no`), or only allow root logins with a SSH key (`without-password`)  
+   1. Set SSH to either disallow root logins (`PermitRootLogin no`), or only allow root logins with a SSH key (`PermitRootLogin without-password`)  
       `sed -ri 's/^#?(PermitRootLogin).*/\1 without-password/g' /etc/ssh/sshd_config`  
       `sed -ri 's/^#?(PermitRootLogin).*/\1 no/g' /etc/ssh/sshd_config`  
       `systemctl restart sshd`
@@ -27,19 +27,23 @@
    `sudo hostnamectl set-hostname workshop.vm`
 1. Active network connection  
    The first network interface should have been automatically connected and set up to use DHCP. If not, make sure you have network connectivity and can access the internet.  
-   Let's assume we're connected to a network with available addresses in the 172.30.30.0/24 network and route via 172.30.30.1 which is also acting as a DNS resolver. Edit `/etc/sysconfig/network-scripts/ifcfg-eth0` and add the following:  
-
-   ```
-   IPADDR=172.30.30.2
-   GATEWAY=172.30.30.1
-   PREFIX=32
-   DNS1=172.30.30.1
-   ```
-
+   Let's assume we're connected to a network with available addresses in the 172.30.30.0/24 block and route via 172.30.30.1. We'll use Google's DNS for starters.
+   1. Edit `/etc/sysconfig/network-scripts/ifcfg-eth0` and add the following:  
+      ```
+      BOOTPROTO=none
+      IPADDR=172.30.30.2
+      GATEWAY=172.30.30.1
+      PREFIX=32
+      DNS1=8.8.8.8
+      ```
+   2. Restart networking  
+      `systemctl restart network`
+   3. Test with a ping to www.google.com   
+      `ping www.google.com`
 1. Updated repositories
    1. Install the repositories for Puppetlabs, EPEL and SCL  
       `yum install http://yum.puppetlabs.com/puppet/puppet-release-el-7.noarch.rpm epel-release centos-release-scl-rh`
-   1. (Optional) Disable the mirrorlists, and force the use of the local centos.mirror.ac.za mirror  
+   1. (Optional) Disable the mirrorlists, and force the use of the TENET's mirror.ac.za mirror  
       ```
       sed -ri 's|^(mirrorlist)|#\1|g;s|#baseurl=http://mirror.centos.org/centos/(.*)|baseurl=http://centos.mirror.ac.za/\1|g' /etc/yum.repos.d/CentOS-*.repo
       ```

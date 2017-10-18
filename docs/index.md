@@ -1,3 +1,5 @@
+# HPC configuration management using Puppet 5
+
 ### Premise
 
 All nodes in a compute cluster should conform to a common standard in order to be useful. With a configuration management system, we can ensure conformity and eliminate common errors which impede effective computing.
