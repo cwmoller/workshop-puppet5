@@ -1,6 +1,6 @@
 # Install a new CentOS 7.4 VM
 
-[Home](index.md)|[Next](configure-vm.md)
+[Home](index.md) \| [Next](configure-vm.md)
 
 ### Requirements
 
@@ -33,4 +33,4 @@
    - username: `root`
    - password: `password`
 
-[Home](index.md)|[Next](configure-vm.md)
+[Home](index.md) \| [Next](configure-vm.md)

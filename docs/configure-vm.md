@@ -1,6 +1,6 @@
 # Configure the VM
 
-[Previous](install-vm.md) [Home](index.md) [Next](install-puppet-server.md)
+[Previous](install-vm.md) \| [Home](index.md) \| [Next](install-puppet-server.md)
 
 ### Requirements
 
@@ -17,7 +17,7 @@
       `passwd sysadm`
    1. Delete the password for the `root` user from `/etc/shadow`  
       `passwd -d root`
-   1. Set SSH to either disallow `root` logins, or only allow `root` logins with a SSH key  
+   1. Set SSH to either disallow root logins (`no`), or only allow root logins with a SSH key (`without-password`)  
       `sed -ri 's/^#?(PermitRootLogin).*/\1 without-password/g' /etc/ssh/sshd_config`  
       `sed -ri 's/^#?(PermitRootLogin).*/\1 no/g' /etc/ssh/sshd_config`  
       `systemctl restart sshd`
@@ -44,9 +44,10 @@
       sed -ri 's|^(mirrorlist)|#\1|g;s|#baseurl=http://mirror.centos.org/centos/(.*)|baseurl=http://centos.mirror.ac.za/\1|g' /etc/yum.repos.d/CentOS-*.repo
       ```
       ```
-      sed -ri 's|^(mirrorlist)|#\1|g;s|#baseurl=http://download.fedoraproject.org/pub/(.*)|baseurl=http://fedora.mirror.ac.za/\1|g' /etc/yum.repos.d/epel*.repo```
+      sed -ri 's|^(mirrorlist)|#\1|g;s|#baseurl=http://download.fedoraproject.org/pub/(.*)|baseurl=http://fedora.mirror.ac.za/\1|g' /etc/yum.repos.d/epel*.repo
+      ```
    1. Update the VM  
       `yum clean metadata && yum update`
 1. Reboot
 
-[Previous](install-vm.md) [Home](index.md) [Next](install-puppet-server.md)
+[Previous](install-vm.md) \| [Home](index.md) \| [Next](install-puppet-server.md)
