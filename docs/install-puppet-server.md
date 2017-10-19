@@ -3,10 +3,10 @@
 [Previous](configure-vm.md) \| [Home](index.md) \| [Next](install-postgresql.md)
 
 1. Install Puppet Server from the repository. Note that the Puppet Agent is a dependency and is installed automatically.  
-   `yum install puppetserver`
+   `sudo yum install puppetserver`
 1. Enable and start the service  
-   `systemctl enable puppetserver`  
-   `systemctl start puppetserver`
+   `sudo systemctl enable puppetserver`  
+   `sudo systemctl start puppetserver`
 
    On first startup the server generates its CA certificate and a new certificate for the server.  
    ```
