@@ -1,4 +1,4 @@
-# Install PostgreSQL 9.5
+# Install PostgreSQL 9.6
 
 [Previous](install-puppet-server.md) \| [Home](index.md) \| [Next](install-puppet-db.md)
 
