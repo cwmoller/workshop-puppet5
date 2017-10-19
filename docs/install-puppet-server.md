@@ -9,7 +9,7 @@
    `systemctl start puppetserver`
 
    On first startup the server generates its CA certificate and a new certificate for the server.  
-   ```bash
+   ```
    [sysadm@workshop ~]$ sudo find /etc/puppetlabs/puppet/ssl/ -name "*.pem"
    /etc/puppetlabs/puppet/ssl/certs/ca.pem
    /etc/puppetlabs/puppet/ssl/certs/workshop.vm.pem
@@ -22,10 +22,10 @@
    /etc/puppetlabs/puppet/ssl/ca/ca_crl.pem
    /etc/puppetlabs/puppet/ssl/crl.pem
    [sysadm@workshop ~]$ sudo /opt/puppetlabs/bin/puppet cert list --all
-   + "workshop.vm" (SHA256) 52:C8:39:42:12:54:D8:82:BD:12:59:AB:A5:EE:51:17:3C:13:DB:51:95:77:52:78:B6:C0:DA:DA:92:88:F3:BB (alt names: "DNS:puppet", "DNS:workshop.vm")
+   + "workshop.vm" (SHA256) 52:C8:<snip>:F3:BB (alt names: "DNS:puppet", "DNS:workshop.vm")
    ```
 1. Test that the agent on the server is happy with the certificates  
-   ```bash
+   ```
    [sysadm@workshop ~]$ sudo /opt/puppetlabs/bin/puppet agent --test --server workshop.vm
    Info: Using configured environment 'production'
    Info: Retrieving pluginfacts
