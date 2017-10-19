@@ -41,8 +41,8 @@
    3. Test with a ping to www.google.com   
       `ping www.google.com`
 1. Updated repositories
-   1. Install the repositories for Puppetlabs, EPEL and SCL  
-      `yum install http://yum.puppetlabs.com/puppet/puppet-release-el-7.noarch.rpm epel-release centos-release-scl-rh`
+   1. Install the repositories for Puppetlabs, EPEL and PGDG  
+      `yum install http://yum.puppetlabs.com/puppet/puppet-release-el-7.noarch.rpm epel-release https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm`
    1. (Optional) Disable the mirrorlists, and force the use of the TENET's mirror.ac.za mirror  
       ```
       sed -ri 's|^(mirrorlist)|#\1|g;s|#baseurl=http://mirror.centos.org/centos/(.*)|baseurl=http://centos.mirror.ac.za/\1|g' /etc/yum.repos.d/CentOS-*.repo
