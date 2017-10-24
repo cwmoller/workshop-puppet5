@@ -3,7 +3,9 @@
 [Previous](install-postgresql.md) \| [Home](index.md) \| [Next](install-puppet-agent.md)
 
 1. Install Puppet DB  
-   `sudo yum install puppetdb`
+   `sudo yum install puppetdb`  
+       sudo yum install puppetdb
+   [](images/install-puppet-db-1.png)
 1. Create the `puppetdb` PostgreSQL user and database
    1. Create the `puppetdb` user. You will be prompted for a password. Choose your own, just make sure it matches the one you set in `/etc/puppetlabs/puppetdb/conf.d/database.ini` later. This example uses 'p@ssw0rd'.  
       `sudo -u postgres createuser -DRSP puppetdb`  
