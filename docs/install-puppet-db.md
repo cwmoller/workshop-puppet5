@@ -12,7 +12,9 @@
    1. Enable the `pg_trgm` extension on the `puppetdb` database  
       `sudo -u postgres psql puppetdb -c "create extension pg_trgm"`
 1. Set PuppetDB to connect to the new database  
-   `sudo sed -i 's/^# subname/subname/;s/^# username.*/username = puppetdb/;s/^# password.*/password = p@ssw0rd/' /etc/puppetlabs/puppetdb/conf.d/database.ini`
+   ```
+   sudo sed -i 's/^# subname/subname/;s/^# username.*/username = puppetdb/;s/^# password.*/password = p@ssw0rd/' /etc/puppetlabs/puppetdb/conf.d/database.ini
+   ```
 1. (Optional) In production you may want to increase PuppetDB's JVM heap size. Here we set it to 1GB.  
    `sudo sed -i 's/^\(JAVA_ARGS="-Xmx\).*"/\11g"/' /etc/sysconfig/puppetdb`
 1. Enable and start the service  
