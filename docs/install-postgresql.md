@@ -19,7 +19,7 @@
    `sudo systemctl enable postgresql-9.6`  
    `sudo systemctl start postgresql-9.6`
 
-   ![](images/install-postgresql-2.png)
+   ![](images/install-postgresql-3.png)
 
 
 [Previous](install-puppet-server.md) \| [Home](index.md) \| [Next](install-puppet-db.md)
