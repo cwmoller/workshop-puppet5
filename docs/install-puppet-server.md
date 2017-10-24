@@ -7,33 +7,30 @@
 1. Enable and start the service  
    `sudo systemctl enable puppetserver`  
    `sudo systemctl start puppetserver`
-
+   ![](images/install-server-1.png)
+   Ouch, something is wrong. Let's take a look at the journal  
+   `sudo journalctl -xe`
+   ![](images/install-server-2.png)
+   Ah, we need more memory for the server to start up. Let's increase the swap file size.
+   1. Turn off swap  
+      `sudo swapoff -a`
+   1. Take a look at its current size  
+      `sudo lvdisplay /dev/vg0/swap`
+   1. Resize the swap volume to 2GB  
+      `sudo lvresize -l 512 /dev/vg0/swap`
+   1. Reformat the swap volume  
+      `sudo mkswap /dev/vg0/swap`
+   1. Turn on swap  
+      `sudo swapon -a`
+   ![](images/install-server-3.png)
+   Let's try to start that service again.
+   ![](images/install-server-4.png)
    On first startup the server generates its CA certificate and a new certificate for the server.  
-   ```
-   [sysadm@workshop ~]$ sudo find /etc/puppetlabs/puppet/ssl/ -name "*.pem"
-   /etc/puppetlabs/puppet/ssl/certs/ca.pem
-   /etc/puppetlabs/puppet/ssl/certs/workshop.vm.pem
-   /etc/puppetlabs/puppet/ssl/public_keys/workshop.vm.pem
-   /etc/puppetlabs/puppet/ssl/private_keys/workshop.vm.pem
-   /etc/puppetlabs/puppet/ssl/ca/signed/workshop.vm.pem
-   /etc/puppetlabs/puppet/ssl/ca/ca_pub.pem
-   /etc/puppetlabs/puppet/ssl/ca/ca_key.pem
-   /etc/puppetlabs/puppet/ssl/ca/ca_crt.pem
-   /etc/puppetlabs/puppet/ssl/ca/ca_crl.pem
-   /etc/puppetlabs/puppet/ssl/crl.pem
-   [sysadm@workshop ~]$ sudo /opt/puppetlabs/bin/puppet cert list --all
-   + "workshop.vm" (SHA256) 52:C8:<snip>:F3:BB (alt names: "DNS:puppet", "DNS:workshop.vm")
-   ```
+   `sudo find /etc/puppetlabs/puppet/ssl/ -name "*.pem"`
+   `sudo /opt/puppetlabs/bin/puppet cert list --all`
+   ![](images/install-server-5.png)
 1. Test that the agent on the server is happy with the certificates  
-   ```
-   [sysadm@workshop ~]$ sudo /opt/puppetlabs/bin/puppet agent --test --server workshop.vm
-   Info: Using configured environment 'production'
-   Info: Retrieving pluginfacts
-   Info: Retrieving plugin
-   Info: Caching catalog for workshop.vm
-   Info: Applying configuration version '1508334053'
-   Info: Creating state file /opt/puppetlabs/puppet/cache/state/state.yaml
-   Notice: Applied catalog in 0.03 seconds
-```
+   `sudo /opt/puppetlabs/bin/puppet agent --test --server workshop.vm`
+   ![](images/install-server-6.png)
 
 [Previous](configure-vm.md) \| [Home](index.md) \| [Next](install-postgresql.md)

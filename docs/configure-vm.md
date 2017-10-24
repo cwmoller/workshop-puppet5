@@ -15,6 +15,7 @@
    1. Create a normal user for yourself, and grant that user `sudo` access.  
       `adduser -m -g users -G wheel -c "System Administrator" sysadm`  
       `passwd sysadm`
+      The password was set to 'p@ssw0rd' in the provided VMDK/VHDX files.
    1. Delete the password for the `root` user from `/etc/shadow`  
       `passwd -d root`
    1. Set SSH to either disallow root logins (`PermitRootLogin no`), or only allow root logins with a SSH key (`PermitRootLogin without-password`)  

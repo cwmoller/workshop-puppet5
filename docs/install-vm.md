@@ -5,8 +5,8 @@
 ### Requirements
 
 - A new VM
-  - minimum 1 core, 4GB RAM, 32GB disk, 1 network interface
-  - recommended 4 cores, 4GB RAM, 32GB disk, 1 network interface
+  - minimum 1 core, 4GB RAM, 32GB disk, 2GB swap, 1 network interface
+  - recommended 4 cores, 8GB RAM, 32GB disk, 1 network interface
   - (in real production) 4 cores, 8GB RAM, 32GB disk, 1 network interface
 - An installation source
   - [CentOS 7.4 DVD ISO](http://centos.mirror.ac.za/7.4.1708/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso)
