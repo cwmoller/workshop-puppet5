@@ -38,7 +38,8 @@
 
    ![](images/install-server-5.png)
 1. Test that the agent on the server is happy with the certificates  
-   `sudo /opt/puppetlabs/bin/puppet agent --test --server workshop.vm`  
+   `sudo /opt/puppetlabs/bin/puppet agent --test --server workshop.vm`
+
    ![](images/install-server-6.png)
 
 [Previous](configure-vm.md) \| [Home](index.md) \| [Next](install-postgresql.md)
