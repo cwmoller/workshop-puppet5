@@ -1,6 +1,6 @@
 # Install Puppet DB
 
-[Previous](install-postgresql.md) \| [Home](index.md) \| [Next](install-puppet-agent.md)
+[Previous](install-postgresql.md) \| [Home](index.md) \| [Next](install-puppet-db-termini.md)
 
 1. Install Puppet DB  
    `sudo yum install puppetdb`
@@ -31,4 +31,4 @@
 
    ![](images/install-puppet-db-4.png)
 
-[Previous](install-postgresql.md) \| [Home](index.md) \| [Next](install-puppet-agent.md)
+[Previous](install-postgresql.md) \| [Home](index.md) \| [Next](install-puppet-db-termini.md)
