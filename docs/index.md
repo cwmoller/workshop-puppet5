@@ -31,5 +31,10 @@ We'll be installing a small [CentOS 7.4](http://centos.mirror.ac.za/7.4.1708/) V
 1. [Install Puppet Server 5](install-puppet-server.md)
 1. [Install PostgreSQL 9.6](install-postgresql.md)
 1. [Install Puppet DB](install-puppet-db.md)
-1. [Register a Puppet Agent](install-puppet-agent.md)
+1. [Connect the Puppet Server to the Puppet DB](install-puppet-db-termini.md)
 1. Create and apply a configuration to the Agent
+   1. [Create a new environment](create-environment.md)
+   1. [Create a Hiera hierarchy](create-hierarchy.md)
+   1. [Add a class from the Forge](forge.md)
+   1. [Apply the configuration](apply.md)
+   1. [Override the configuration](override.md)

@@ -1,6 +1,6 @@
 # Connect the Puppet Server to the Puppet DB
 
-[Previous](install-puppet-db.md) \| [Home](index.md)
+[Previous](install-puppet-db.md) \| [Home](index.md) \| [Next](create-environment.md)
 
 From the [official documentation](https://puppet.com/docs/puppetdb/5.1/connect_puppet_master.html),
 >Once PuppetDB is installed and running, configure your Puppet master(s) to use it. When properly connected to PuppetDB, Puppet masters will do the following:
@@ -42,4 +42,4 @@ From the [official documentation](https://puppet.com/docs/puppetdb/5.1/connect_p
 1. Restart the Puppet Server  
    `systemctl restart puppetserver`
 
-[Previous](install-puppet-db.md) \| [Home](index.md)
+[Previous](install-puppet-db.md) \| [Home](index.md) \| [Next](create-environment.md)

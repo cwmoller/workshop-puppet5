@@ -61,6 +61,7 @@ policycoreutils-python
 redhat-lsb-core
 screen
 vim
+git
 %end
 ```
 
