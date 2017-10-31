@@ -8,7 +8,7 @@ By default a barebones environment called 'production' is installed by the serve
    `sudo mkdir /etc/puppetlabs/code/environments/test`  
    `sudo chown sysadm.users /etc/puppetlabs/code/environments/test`
 
-   ![](create-environment-1.png)
+   ![](images/create-environment-1.png)
 1. Create an empty Git repository in the new environment  
    `cd /etc/puppetlabs/code/environments/test`  
    `git init`
@@ -18,11 +18,11 @@ By default a barebones environment called 'production' is installed by the serve
    `git add .`  
    `git commit -m "New empty environment"`
 
-   ![](create-environment-2.png)
+   ![](images/create-environment-2.png)
 2. Apply the environment to our server  
    `sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm --environment test`
 
-   ![](create-environment-3.png)
+   ![](images/create-environment-3.png)
 
 
 [Previous](install-puppet-db-termini.md) \| [Home](index.md) \| [Next](create-hierarchy.md)
