@@ -90,7 +90,7 @@ Let's commit our changes:
 
 ## Set up environment to read list of classes to apply from Hiera
 
-Puppet reads the 'manifests/site.pp' file to determine which classes to apply a node. We need to tell it to read that list from Hiera with the Hiera '[lookup](https://puppet.com/docs/puppet/5.3/hiera_use_function.html#examples)' function. Add `lookup('classes', Array[String], 'unique').include` to 'manifests/site.pp'. This will cause Puppet to read an array of strings from the 'classes' key in our Hiera hierarchy, keeping only unique entries, and using that as a list of classes to include.
+Puppet reads the 'manifests/site.pp' file to determine which classes to apply to a node. We need to tell it to read that list from Hiera with the Hiera '[lookup](https://puppet.com/docs/puppet/5.3/hiera_use_function.html#examples)' function. Add `lookup('classes', Array[String], 'unique').include` to 'manifests/site.pp'. This will cause Puppet to read an array of strings from the 'classes' key in our Hiera hierarchy, keeping only unique entries, and using that as a list of classes to include.
 
 ![](images/create-hierarchy-3.png)
 
@@ -99,6 +99,19 @@ Applying the configuration now gives an error, because the 'classes' key doesn't
 
 ![](images/create-hierarchy-4.png)
 
+To make it happy, let's have it apply an empty array of classes by default. Edit 'data/common.yaml' to include  
+```
+---
+classes: []
+```
+
+![](images/create-hierarchy-5.png)
+
+Let's commit our changes:  
+`git add data/common.yaml manifests/site.pp`  
+`git commit -m "Read classes from Hiera"`
+
+![](images/create-hierarchy-6.png)
 
 
 [Previous](create-environment.md) \| [Home](index.md) \| [Next](forge.md)
