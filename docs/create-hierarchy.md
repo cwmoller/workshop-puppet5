@@ -2,6 +2,8 @@
 
 [Previous](create-environment.md) \| [Home](index.md) \| [Next](forge.md)
 
+## Hiera hierarchies
+
 The default contents of 'hiera.yaml' are:
 ```
 ---
@@ -18,7 +20,8 @@ This means that when looking for configurations to apply to our node agent, it l
 
 Every environment has its own hierarchy. You can use a single Puppet server with multiple environments to serve the needs of your campus servers, campus desktops, HPC infrastructure and HPC compute nodes.
 
-More examples of hierarchies:
+## More examples of hierarchies
+
 ```
 ---
 version: 5
@@ -83,5 +86,19 @@ Let's commit our changes:
    `git commit -m "Added OS level to hiera.yaml"`
 
 ![](images/create-hierarchy-2.png)
+
+
+## Set up environment to read list of classes to apply from Hiera
+
+Puppet reads the 'manifests/site.pp' file to determine which classes to apply a node. We need to tell it to read that list from Hiera with the Hiera '[lookup](https://puppet.com/docs/puppet/5.3/hiera_use_function.html#examples)' function. Add `lookup('classes', Array[String], 'unique').include` to 'manifests/site.pp'. This will cause Puppet to read an array of strings from the 'classes' key in our Hiera hierarchy, keeping only unique entries, and using that as a list of classes to include.
+
+![](images/create-hierarchy-3.png)
+
+Applying the configuration now gives an error, because the 'classes' key doesn't exist:  
+`sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm --environment test`
+
+![](images/create-hierarchy-4.png)
+
+
 
 [Previous](create-environment.md) \| [Home](index.md) \| [Next](forge.md)
