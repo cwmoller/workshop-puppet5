@@ -78,6 +78,10 @@ hierarchy:
 Applying the configuration does not cause errors. Non-existent Hiera files are ignored silently.  
 `sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm --environment test`
 
+Let's commit our changes:  
+   `git add hiera.yaml`  
+   `git commit -m "Added OS level to hiera.yaml"`
 
+![](images/create-hierarchy-2.png)
 
 [Previous](create-environment.md) \| [Home](index.md) \| [Next](forge.md)
