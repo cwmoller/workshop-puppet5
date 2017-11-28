@@ -26,15 +26,15 @@ Let's commit our changes:
 We've installed the module, but it's not doing anything yet. Let's include the module in 'data/common.yaml' but not configure it. Then let's see what the module will try to do without any configuration.
 
 * Edit 'data/common.yaml' to include the 'yum' class  
-   ```yaml
-   ---
-   classes:
+  ```yaml
+  ---
+  classes:
     - yum
-   ```
+  ```
 * Run the agent in 'dryrun' or 'noop' mode  
-   ```bash
-   sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm --environment test --noop
-   ```
+  ```bash
+  sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm --environment test --noop
+  ```
 
 ![](images/forge-2.png)
 
