@@ -25,12 +25,12 @@ Let's commit our changes:
 
 We've installed the module, but it's not doing anything yet. Let's include the module in 'data/common.yaml' but not configure it. Then let's see what the module will try to do without any configuration.
 
-* Edit 'data/common.yaml' to include the 'yum' class  
-   ```
-   ---
-   classes:
-     - yum
-   ```
+* Edit 'data/common.yaml' to include the 'yum' class
+  ```yaml
+  ---
+  classes:
+   - yum
+  ```
 * Run the agent in 'dryrun' or 'noop' mode  
    ```
    sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm --environment test --noop
@@ -39,11 +39,13 @@ We've installed the module, but it's not doing anything yet. Let's include the m
 ![](images/forge-2.png)
 
 We can see that it wants to install the 'yum-utils' package, and set a couple of configuration options for deleting old, unused kernels. We're quite happy with that, so have it apply  
-```
+```bash
 sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm --environment test
 ```
 
 ## Configure the module
+
+Read the module's [readme]https://forge.puppet.com/puppet/yum/readme) on the Forge and the 'manifests/init.pp' file to get an idea of how to configure the module.
 
 
 

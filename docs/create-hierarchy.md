@@ -5,7 +5,7 @@
 ## Hiera hierarchies
 
 The default contents of 'hiera.yaml' are:
-```
+```yaml
 ---
 version: 5
 hierarchy:
@@ -22,7 +22,7 @@ Every environment has its own hierarchy. You can use a single Puppet server with
 
 ## More examples of hierarchies
 
-```
+```yaml
 ---
 version: 5
 hierarchy:
@@ -46,7 +46,7 @@ The configuration above works well for a heterogeneous set of campus desktops wh
    This regular expression says strip everything from the node's hostname starting at the first number. Therefore 'math123.uni.ac' becomes 'math'.
 
 In a system where your operating systems are all the same (like an HPC), the "Operating System" level can be removed:  
-```
+```yaml
 ---
 version: 5
 hierarchy:
@@ -61,7 +61,7 @@ hierarchy:
 ```
 
 For this workshop, let's add an "Operating System" level. Add the following to '/etc/puppetlabs/code/environments/test/hiera.yaml'  
-```
+```yaml
 ---
 version: 5
 hierarchy:
@@ -100,7 +100,7 @@ Applying the configuration now gives an error, because the 'classes' key doesn't
 ![](images/create-hierarchy-4.png)
 
 To make it happy, let's have it apply an empty array of classes by default. Edit 'data/common.yaml' to include  
-```
+```yaml
 ---
 classes: []
 ```

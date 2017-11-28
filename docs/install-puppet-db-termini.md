@@ -13,7 +13,7 @@ From the [official documentation](https://puppet.com/docs/puppetdb/5.1/connect_p
    ![](images/install-puppet-db-termini-1.png)
 1. Create the config files
    1. Set up where to find the PuppetDB web service
-      ```
+      ```bash
       sudo bash -c "cat <<EOF >> /etc/puppetlabs/puppet/puppetdb.conf
       [main]
       server_urls = https://workshop.vm:8081
@@ -28,7 +28,7 @@ From the [official documentation](https://puppet.com/docs/puppetdb/5.1/connect_p
       ![](images/install-puppet-db-termini-3.png)
 
    1. Set up the Puppet Server's fact storage to use PuppetDB
-      ```
+      ```bash
       sudo bash -c "cat <<EOF >> /etc/puppetlabs/puppet/routes.yaml
       ---
       master:

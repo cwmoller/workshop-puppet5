@@ -43,14 +43,14 @@
       `ping www.google.com`
 1. Updated repositories
    1. Install the repositories for Puppetlabs, EPEL and PGDG  
-      ```
+      ```bash
       sudo yum install http://yum.puppetlabs.com/puppet/puppet-release-el-7.noarch.rpm epel-release https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
       ```
    1. (Optional) Disable the mirrorlists, and force the use of the TENET's mirror.ac.za mirror  
-      ```
+      ```bash
       sudo sed -ri 's|^(mirrorlist)|#\1|g;s|#baseurl=http://mirror.centos.org/centos/(.*)|baseurl=http://centos.mirror.ac.za/\1|g' /etc/yum.repos.d/CentOS-*.repo
       ```
-      ```
+      ```bash
       sudo sed -ri 's|^(mirrorlist)|#\1|g;s|#baseurl=http://download.fedoraproject.org/pub/(.*)|baseurl=http://fedora.mirror.ac.za/\1|g' /etc/yum.repos.d/epel*.repo
       ```
    1. Update the VM  

@@ -18,7 +18,7 @@
 
    ![](images/install-puppet-db-2.png)
 1. Set PuppetDB to connect to the new database  
-   ```
+   ```bash
    sudo sed -i 's/^# subname/subname/;s/^# username.*/username = puppetdb/;s/^# password.*/password = p@ssw0rd/' /etc/puppetlabs/puppetdb/conf.d/database.ini
    ```
 
