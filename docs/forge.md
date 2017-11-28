@@ -31,7 +31,12 @@ We've installed the module, but it's not doing anything yet. Let's include the m
    classes:
      - yum
    ```
-
+1. Edit 'data/common.yaml' to include the 'yum' class  
+   ```yaml
+   ---
+   classes:
+     - yum
+   ```
 1. Run the agent in 'dryrun' or 'noop' mode  
    ```bash
    sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm --environment test --noop
