@@ -22,7 +22,7 @@ From the [official documentation](https://puppet.com/docs/puppetdb/5.1/connect_p
       ```
       ![](images/install-puppet-db-termini-2.png)
    1. Set up the Puppet Server's reporting and config storage to use PuppetDB
-      ```
+      ```bash
       sudo sed -ri 's/(\[master\])/\1\nstoreconfigs = true\nstoreconfigs_backend = puppetdb\nreports =    puppetdb\n/g' /etc/puppetlabs/puppet/puppet.conf
       ```
       ![](images/install-puppet-db-termini-3.png)
