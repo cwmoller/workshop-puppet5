@@ -49,9 +49,9 @@ We've installed the module, but it's not doing anything yet. Let's include the m
 
 Read the module's [readme](https://forge.puppet.com/puppet/yum/readme) on the Forge and the 'manifests/init.pp' file to get an idea of how to configure the module.
 
-Let's have Puppet control all the YUM repositories on the host. [This](https://forge.puppet.com/puppet/yum/readme#manage-a-custom-repo-via-hiera-data) is accomplished with the `yum::repos` key.
+Let's have Puppet control all the YUM repositories on the host. This is accomplished with the '[yum::repos](https://forge.puppet.com/puppet/yum/readme#manage-a-custom-repo-via-hiera-data)' key.
 
-Seeing as YUM repos are settings that apply to all hosts running the same operating system, it would make sense to put this configuration in a per-OS configuration file in our hierarchy. We'll place repos that are specific to CentOS in `data/os/CentOS.yaml`, and repos that are valid for all OS's in the RedHat family (RedHat, CentOS, Scientific, Amazon, Oracle) in `data/os/RedHat.yaml`.
+Seeing as YUM repos are settings that apply to all hosts running the same operating system, it would make sense to put this configuration in a per-OS configuration file in our hierarchy. We'll place repos that are specific to CentOS in 'data/os/CentOS.yaml', and repos that are valid for all OS's in the RedHat family (RedHat, CentOS, Scientific, Amazon, Oracle) in 'data/os/RedHat.yaml'.
 
 1. Create the 'data/os' directory  
    `mkdir data/os`
@@ -80,6 +80,7 @@ Seeing as YUM repos are settings that apply to all hosts running the same operat
    ```
 
 1. Create 'data/os/RedHat.yaml' with the following contents  
+
    ```yaml
    ---
    yum::managed_repos:
