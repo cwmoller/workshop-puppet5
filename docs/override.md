@@ -40,7 +40,7 @@ Let's add the PostgreSQL repo.
    `git add data/nodes`  
    `git commit -m "Added configuration for workshop.vm"`
 
-### Override a less specific configurations
+### Override a less specific configuration
 
 We've set up our repositories for CentOS to ignore the 'mirrorlist' attribute and set the 'baseurl' attribute. But what if 'workshop.vm' is very special and needs to override that global setting?
 
