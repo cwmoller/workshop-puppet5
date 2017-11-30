@@ -13,6 +13,7 @@ Let's add the PostgreSQL repo.
 1. Create a node-specific configuration file for 'workshop.vm'  
    `touch data/nodes/workshop.vm.yaml`
 1. Add the configuration for the PostgreSQL repo  
+
    ```yaml
    ---
    yum::managed_repos:
