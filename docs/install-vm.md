@@ -11,7 +11,7 @@
 - An installation source
   - [CentOS 7.4 DVD ISO](http://centos.mirror.ac.za/7.4.1708/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso)
   - or [CentOS 7.4 NetInstall ISO](http://centos.mirror.ac.za/7.4.1708/isos/x86_64/CentOS-7-x86_64-NetInstall-1708.iso) and full (and fast) internet access
-- A kickstart file
+- A [kickstart](kickstart.md) file
   - (with network) we'll use [this file](https://github.com/cwmoller/workshop-puppet5/raw/master/ks-net.cfg)
   - (with no network) a floppy disk image will be made available with [this file](https://github.com/cwmoller/workshop-puppet5/raw/master/ks.cfg)
 

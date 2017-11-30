@@ -10,14 +10,6 @@ In this workshop we will install and configure Puppet 5, a configuration managem
 
 We will install and configure the Puppet server, PuppetDB database, a Puppet agent and multiple modules from the Puppet Forge. Best practises will be implemented, including using Hiera and saving configurations to Git.
 
-### Technologies covered
-
-- [Kickstart](kickstart.md)
-- [DHCP](dhcp.md)
-- [DNS](dns.md)
-- [Puppet](puppet.md)
-- [Git](git.md)
-
 ### Hands on
 
 Feel free to go on ahead if you're well versed in any of the topics.
