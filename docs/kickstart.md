@@ -1,6 +1,6 @@
 # Kickstart
 
-[Home](index.md) \| [Install VM](configure-vm.md)
+[Home](index.md) \| [Install VM](install-vm.md)
 
 From the official documentation
 
@@ -89,4 +89,4 @@ Completely optional, we disable the kdump feature.
 
 [Official documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-kickstart-installations)
 
-[Home](index.md) \| [Install VM](configure-vm.md)
+[Home](index.md) \| [Install VM](install-vm.md)
