@@ -9,7 +9,7 @@ In this example we'll install a module which will manage our YUM repositories. S
 ## Install the module
 
 To install the module, we can either download it manually and check its dependencies manually, or have Puppet sort it out for us:  
-`puppet module install puppet-yum --modulepath /etc/puppetlabs/code/environments/test/modules`
+`/opt/puppetlabs/bin/puppet module install puppet-yum --modulepath /etc/puppetlabs/code/environments/test/modules`
 
 We need to specify the path to the modules directory because we're not running the command as 'root'. We also have the option of installing the modules into '/etc/puppetlabs/code/modules', sharing the modules between all environments.
 
@@ -93,7 +93,7 @@ Seeing as YUM repos are settings that apply to all hosts running the same operat
 
 1. Run the agent in 'dryrun' or 'noop' mode  
    ```bash
-   sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm  environment test --noop
+   sudo /opt/puppetlabs/bin/puppet agent --verbose --onetime --no-daemonize --server workshop.vm  --environment test --noop
    ```
 
    ![](images/forge-3.png)

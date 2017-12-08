@@ -40,6 +40,6 @@ From the [official documentation](https://puppet.com/docs/puppetdb/5.1/connect_p
       ```
       ![](images/install-puppet-db-termini-4.png)
 1. Restart the Puppet Server  
-   `systemctl restart puppetserver`
+   `sudo systemctl restart puppetserver`
 
 [Previous](install-puppet-db.md) \| [Home](index.md) \| [Next](create-environment.md)
