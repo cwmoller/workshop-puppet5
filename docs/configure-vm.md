@@ -34,7 +34,7 @@
       BOOTPROTO=none
       IPADDR=172.30.30.2
       GATEWAY=172.30.30.1
-      PREFIX=32
+      PREFIX=24
       DNS1=8.8.8.8
       ```
    2. Restart networking  
